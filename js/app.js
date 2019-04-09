@@ -17,20 +17,37 @@ const todos = [{
 }];
 
 // how many todos left
-const incompleteTodos = todos.filter( todo =>{
-    return !todo.completed
-})
-const summary = document.createElement('h2');
-summary.textContent = `You have ${incompleteTodos.length} todos left`;
-document.querySelector('#message').appendChild(summary);
+
 
 // populate the todos list 
+const filters = {
+    searchText: ''
+}
 
-todos.forEach( todo =>{
-    const para = document.createElement('p');
-    para.textContent = `${todo.text}`;
-    document.querySelector('#todo-list').appendChild(para);
-})
+const renderTodos = function (todos, filters){
+    const filteredTodos = todos.filter(function (todo){
+        return todo.text.toLowerCase().includes(filters.searchText.toLowerCase());
+    })
+
+    const incompleteTodos = filteredTodos.filter( todo =>{
+        return !todo.completed
+    })
+
+    document.querySelector('#todo-list').innerHTML = '';
+
+    const summary = document.createElement('h2');
+    summary.textContent = `You have ${incompleteTodos.length} todos left`;
+    document.querySelector('#todo-list').appendChild(summary);
+
+    filteredTodos.forEach( todo =>{
+        const para = document.createElement('p');
+        para.textContent = `${todo.text}`;
+        document.querySelector('#todo-list').appendChild(para);
+    })
+
+}
+
+renderTodos(todos, filters);
 
 document.querySelector('#add-btn').addEventListener('click', function(e){
     e.target.textContent = 'add button was clicked';
@@ -40,7 +57,11 @@ document.querySelector('#remove-btn').addEventListener('click', function(e){
     e.target.style.background = 'red';
 })
 
-
+document.querySelector('#search-text').addEventListener('input', function(e){
+    filters.searchText = e.target.value;
+    console.log(e.target.value);
+    renderTodos(todos, filters);
+})
 
 
 
