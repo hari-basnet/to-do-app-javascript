@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#todos-wrapper {
+  width: 70%;
+  height: 60vh;
+  margin: 50px auto;
+  border: 2px solid #aaa;
+  border-radius: 40px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+#title {
+  height: 50px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+#todo-list{
+
+    border-radius: 30px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    line-height: 2;
+    background-color: rgba(128, 128, 128, 0.698); 
+}
+
+#add-btn{
+    padding: 10px 30px;
+    border-radius: 20px;
+    outline: none;
+    background-color: rgba(172, 255, 47, 0.794);
+}
+
+#remove-btn{
+    padding: 10px 30px;
+    border-radius: 20px;
+    outline: none;
+    background-color: rgba(255, 68, 0, 0.788);
+}
