@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 #todos-wrapper {
-  width: 70%;
-  height: 60vh;
+  width: 80%;
   margin: 50px auto;
   border: 2px solid #aaa;
   border-radius: 40px;
@@ -19,17 +18,18 @@
   text-align: center;
 }
 
-#todo-list{
+.todo-list{
 
-    border-radius: 30px;
-    width: 90%;
-    margin: 20px auto;
-    padding: 20px;
-    line-height: 2;
-    background-color: rgba(128, 128, 128, 0.698); 
+  background-color: rgba(128, 128, 128, 0.698); 
+  border-radius: 30px;
+  margin: 20px auto;
+  padding: 20px;
+  line-height: 2;
+  width: 90%;
 }
 
 #add-btn{
+  font-size: 1rem;
     padding: 10px 30px;
     border-radius: 20px;
     outline: none;
@@ -37,8 +37,20 @@
 }
 
 #remove-btn{
+  font-size: 1rem;
     padding: 10px 30px;
     border-radius: 20px;
     outline: none;
     background-color: rgba(255, 68, 0, 0.788);
+}
+
+input{
+
+  border: 1px solid rgba(0, 0, 0, 0.221);
+  border-radius: 10px;
+  font-size: 1rem;
+  margin: 10px 0 0 0;
+  outline-color: rgba(0, 0, 0, 0.31);
+  padding: 10px 40px;
+  width: 400px;
 }

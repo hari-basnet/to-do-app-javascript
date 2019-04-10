@@ -60,15 +60,8 @@ document.querySelector('#remove-btn').addEventListener('click', function(e){
 document.querySelector('#search-text').addEventListener('input', function(e){
     filters.searchText = e.target.value;
     console.log(e.target.value);
-    renderTodos(todos, filters);
+    renderTodos(todos, filters);Þ
 })
-
-
-
-
-
-
-
 
 
 
