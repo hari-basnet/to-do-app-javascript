@@ -21,9 +21,11 @@ const todos = [{
 
 // populate the todos list 
 const filters = {
-    searchText: ''
+    searchText: '',
+    hideCompleted: false
 }
 
+// render todos to the page
 const renderTodos = function (todos, filters){
     const filteredTodos = todos.filter(function (todo){
         return todo.text.toLowerCase().includes(filters.searchText.toLowerCase());
@@ -49,21 +51,26 @@ const renderTodos = function (todos, filters){
 
 renderTodos(todos, filters);
 
-document.querySelector('#add-btn').addEventListener('click', function(e){
-    e.target.textContent = 'add button was clicked';
-})
 
-document.querySelector('#remove-btn').addEventListener('click', function(e){
-    e.target.style.background = 'red';
-})
-
+// event listeners 
 document.querySelector('#search-text').addEventListener('input', function(e){
     filters.searchText = e.target.value;
     console.log(e.target.value);
-    renderTodos(todos, filters);Þ
+    renderTodos(todos, filters);
 })
 
+document.querySelector('#new-todo').addEventListener('submit', function(e){
+    e.preventDefault();
+    
+    todos.push({text:e.target.elements.newTodo.value, completed:false});
+    renderTodos(todos, filters);
+    e.target.elements.newTodo.value = '';
+})
 
+document.querySelector('#hide-selected').addEventListener('change', function(e){
+
+    
+})
 
 
 
