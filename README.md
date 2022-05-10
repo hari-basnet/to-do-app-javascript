@@ -4,7 +4,7 @@ A simple to do app list developed to learn vanilla JavaScript.
 
 ## Demo
 
-https://haribasnet0.github.io/to-do-app-javascript/
+https://hari-basnet.github.io/to-do-app-javascript/
 
 ## Author
 
